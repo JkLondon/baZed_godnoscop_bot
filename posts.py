@@ -1,6 +1,7 @@
 
 import asyncio
 import configparser
+from webbrowser import get
 from pyrogram import Client, filters
 from pyrogram.types import (InlineQueryResultArticle, InputTextMessageContent,
                             InlineKeyboardMarkup, InlineKeyboardButton)
@@ -27,7 +28,7 @@ async def get_posts():
 	}
 
 	app = Client(
-		"sniper",
+		"medusa",
 		api_id=api_id,
 		api_hash=api_hash
 	)
@@ -52,4 +53,4 @@ async def get_posts():
 			posts.append(post)
 		await app.stop()
 	return posts[::-1]
-	
+

@@ -1,14 +1,16 @@
-from unittest import result
+import configparser
 from pyrogram import Client
 from pyrogram.types import (InlineQueryResultArticle, InputTextMessageContent,
                             InlineKeyboardMarkup, InlineKeyboardButton)
 from uuid import uuid4
 from description import make_description
 from posts import get_posts
+config = configparser.ConfigParser()
+config.read("config.ini")
 
 app = Client(
-    "my_bot",
-    bot_token="5231895048:AAGqiPyjFWWLri15YJu5sepzMWI2C1HWBfU"
+    "bazedgod",
+    bot_token=config["pyrogram"]["bot_token"]
 )
 
 @app.on_inline_query()
